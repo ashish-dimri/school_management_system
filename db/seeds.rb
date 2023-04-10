@@ -39,3 +39,33 @@ course3 = school1.courses.create! do |c|
     c.name = "Computer"
     c.description = "Computer"
 end
+
+batch1 = course1.batches.create! do |b|
+    b.name = "Maths Batch 1"
+    b.description = "Maths Batch 1"
+    b.school_id = course1.school.id
+end
+
+batch2 = course1.batches.create! do |b|
+    b.name = "Maths Batch 2"
+    b.description = "Maths Batch 2"
+    b.school_id = course1.school.id
+end
+
+student1 = batch1.students.create! do |s|
+   s.name = "Student 1"
+   s.email = "student1@test.com"
+   s.password = "password"
+   s.school_id = batch1.course.school.id
+   s.course_id = batch1.course.id
+   s.status = "approved"
+end
+
+student1 = batch1.students.create! do |s|
+   s.name = "Student 2"
+   s.email = "student2@test.com"
+   s.password = "password"
+   s.school_id = batch1.course.school.id
+   s.course_id = batch1.course.id
+   s.status = "approved"
+end

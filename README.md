@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application that allows for the creation and management of schools, courses, batches, and students by
+various user types including Admin, School Admin, and Student. With different user types and their respective
+capabilities, the application offers a flexible and secure platform for educational organisations.
 
-Things you may want to cover:
+## Steps to setup application
 
-* Ruby version
+Open terminal and go to project directory and run below commands.
 
-* System dependencies
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
+## Steps to run application
 
-* Database creation
+Open terminal and go to project directory and run below commands.
 
-* Database initialization
+```
+rails s
+```
 
-* How to run the test suite
+## Steps to view application in browser
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+http://localhost:3000/
+```
 
-* Deployment instructions
+## Roles
 
-* ...
+### Admin
+
+* Admins have full control over the system and can create schools and SchoolAdmins.
+
+On home page click on `Admin Sign In` to login using admin credentials.
+
+### School Admin
+
+* SchoolAdmins can update information about the school
+* SchoolAdmins are responsible for creating courses
+* SchoolAdmins are responsible for creating batches
+* SchoolAdmins are responsible for adding students to batches
+* They can also approve or deny enrolment requests made by students
+
+On home page click on `School Admin Sign In` to login using admin credentials.
+
+
+### Student
+
+* Students can raise a request to enrol in a batch.
+* Students from the same batch can see their classmates and their progress
+
+On home page click on `Student Sign In` to login using admin credentials.
+
+On home page click on `Student Sign Up` to signup and enroll in a batch.
